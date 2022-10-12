@@ -3,7 +3,7 @@ import { differenceInSeconds } from 'date-fns'
 
 import { CountdownContainer, Separator } from './styles'
 
-import { CyclesContext } from '../..'
+import { CyclesContext } from '../../../../contexts/CyclesContext'
 
 export function Countdown() {
   const {
@@ -27,6 +27,8 @@ export function Countdown() {
   useEffect(() => {
     if (activeCycle) {
       document.title = `Restam ${minutes}:${seconds}`
+    } else {
+      document.title = 'Ignite Timer'
     }
   }, [activeCycle, minutes, seconds])
 
